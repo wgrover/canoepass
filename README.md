@@ -1,2 +1,2 @@
 # canoepass
-Can I kayak through Canoe Pass?
+Can I float through Canoe Pass?
