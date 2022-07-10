@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    now = datetime.now(timezone.utc) - timedelta(minutes=20)
+    now = datetime.now(timezone.utc) - timedelta(minutes=30)
     url = "https://api-iwls.dfo-mpo.gc.ca/api/v1/stations/5cebf1de3d0f4a073c4bb954/data?time-series-code=wlp&from="
     url += now.strftime("%Y-%m-%dT%H%%3A%M%%3A%SZ") 
     url += "&to="
@@ -18,7 +18,7 @@ def index():
     heights = []
     for row in response.json():
         utc = datetime.strptime(row["eventDate"], "%Y-%m-%dT%H:%M:%SZ")
-        utc = utc + timedelta(minutes=20)
+        utc = utc + timedelta(minutes=30)
         utc = utc.replace(tzinfo=ZoneInfo("UTC"))
         time = utc.astimezone(ZoneInfo("America/Vancouver"))
         times.append(time)
