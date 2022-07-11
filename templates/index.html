@@ -9,7 +9,13 @@
 <link href={{ url_for('static',filename='styles/bootstrap.min.css') }} rel="stylesheet">
   </head>
 
-  <body class="d-flex h-100 text-center text-white bg-dark">
+  {% if floating %}
+  <body class="d-flex h-100 text-center text-white bg-success">
+  {% endif %} 
+
+  {% if not floating %}
+  <body class="d-flex h-100 text-center text-white bg-danger">
+  {% endif %} 
     
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
@@ -33,7 +39,7 @@
   </main>
 
   <footer class="mt-auto text-white-50">
-    <p><a href="">about</a></p>
+    <p><a href="" class="text-white">about</a></p>
   </footer>
 </div>
 
