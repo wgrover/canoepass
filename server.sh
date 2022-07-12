@@ -1,2 +1,2 @@
 #!/usr/bin/sh
-gunicorn -w 4 -b :8080 'app:app'
+gunicorn -w 4 -b :8000 'app:app'
