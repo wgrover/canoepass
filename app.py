@@ -5,6 +5,10 @@ from backports.zoneinfo import ZoneInfo
 
 app = Flask(__name__)
 
+@app.route("/about")
+def about():
+    return render_template('about.html') 
+
 @app.route("/")
 def index():
     now = datetime.now(timezone.utc) - timedelta(minutes=30)
@@ -32,3 +36,5 @@ def index():
         for time, height in zip(times, heights):
             if height >= 10.0:
                 return render_template('index.html', floating=False, height=round(heights[0], 1), time=datetime.strftime(time, "%-I:%M %p on %A %B %-d %Y")) 
+
+
