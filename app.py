@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import requests
 from datetime import datetime, timezone, timedelta
-from backports.zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo
 
 app = Flask(__name__)
 
